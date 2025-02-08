@@ -3,10 +3,12 @@ const app = express();
 const cors = require("cors");
 const admin = require("firebase-admin");
 
-const serviceAccount = require("./capital-rush-01-firebase-adminsdk-fbsvc-f91a43a106.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert(serviceAccount),
 });
+
 
 
 const db = admin.firestore();
