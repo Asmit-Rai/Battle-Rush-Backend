@@ -6,7 +6,6 @@ const admin = require("firebase-admin");
 const serviceAccount = require("./capital-rush-01-firebase-adminsdk-fbsvc-f91a43a106.json");
 
 const admin = require("firebase-admin");
-
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),
 });
